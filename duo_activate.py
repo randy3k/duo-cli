@@ -36,7 +36,7 @@ r = requests.post(url, headers=headers, data=data)
 response = json.loads(r.text)
 
 try:
-  secret = base64.b32encode(response['response']['hotp_secret'])
+  secret = base64.b32encode(response['response']['hotp_secret'].encode()).decode()
 except KeyError:
   print(response)
   sys.exit(1)
@@ -46,7 +46,7 @@ print("secret", secret)
 print("10 Next OneTime Passwords!")
 # Generate 10 Otps!
 hotp = pyotp.HOTP(secret)
-for _ in xrange(10):
+for _ in range(10):
     print(hotp.at(_))
 
 f = open('duotoken.hotp', 'w')
