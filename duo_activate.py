@@ -7,7 +7,7 @@ import json
 import sys
 
 if len(sys.argv) < 2:
-    print("Usage: python duo_bypass.py <url to duo qr>")
+    print("Usage: python duo_bypass.py <duo activation url>")
     sys.exit()
 
 qr_url = sys.argv[1]
