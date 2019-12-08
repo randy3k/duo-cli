@@ -13,12 +13,10 @@ Install stuff,
 pip install -r requirements.txt
 ```
 
-Just grab the QR Code URL and copy the string after value
-
-https://api-XXX.duosecurity.com/frame/qr?value={VALUE}
-
+Grab the URL sent to you by email when adding the device (it might look like
+https://m-XXXXXXXX.duosecurity.com/android/YYYYYYYYYYYYYYYYYYYY) and run:
 ```
-./duo_activate.py {VALUE}
+./duo_activate.py {URL}
 ```
 
 If everything worked you can then generate a code by running:
